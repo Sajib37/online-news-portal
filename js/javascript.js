@@ -18,10 +18,12 @@ const createBtn = (id, name) => {
     btnContainer.appendChild(singleBtn);
     singleBtn.addEventListener("click", function () {
         createNews(id);
+        
     })
 }
 // show news by clicking button
 const noNews = document.getElementById("no-news");
+const sort = document.getElementById('Sort')
 const createNews = async (id) => {
     const loadNews = await fetch(`https://openapi.programming-hero.com/api/news/category/${id}`);
     const news = await loadNews.json();
@@ -32,6 +34,9 @@ const createNews = async (id) => {
     else {
         noNews.classList.add('hidden');
     }
+    sort.addEventListener('click', function () {
+        sortCard(news.data);
+    })
     cardContainer.innerHTML = ``;
     newsData.forEach(content => {
         createCard(content);
@@ -42,7 +47,6 @@ const cardContainer = document.getElementById('news-container');
 
 const createCard = (content) => {
     const singleCard = document.createElement('div');
-    console.log(content);
     singleCard.innerHTML = `
     <div class="card bg-base-100 shadow-xl rounded-none">
         <figure class="relative">
@@ -64,5 +68,18 @@ const createCard = (content) => {
     `
     cardContainer.appendChild(singleCard);
 }
+//for sorted news
+const sortCard = (data) => {
+    data.sort((a, b) => a.total_view - b.total_view);
+    data.forEach(con => {
+        console.log(con.total_view);
+    })
+    cardContainer.innerHTML = ``;
+    data.forEach(content => {
+        createCard(content);
+    })
+}
+
+
 // for default news
 createNews('01')
