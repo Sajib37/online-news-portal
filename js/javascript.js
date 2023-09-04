@@ -70,7 +70,7 @@ const createCard = (content) => {
 }
 //for sorted news
 const sortCard = (data) => {
-    data.sort((a, b) => a.total_view - b.total_view);
+    data.sort((a, b) => b.total_view - a.total_view);
     data.forEach(con => {
         console.log(con.total_view);
     })
