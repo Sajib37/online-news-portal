@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathavanga Online portal</title>
+    <!-- daisyUi Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body>
+    <header>
+        <div class="my-2">
+            <h1 class="text-4xl font-bold text-lime-600 text-center">Mathavanga News</h1>
+        </div>
+        <section class="max-w-screen-xl mx-auto flex justify-center my-4">
+            <div id="btn-container" class="flex gap-2 flex-wrap justify-center px-2"></div>
+        </section>
+        <section id="no-news" class="text-3xl md:5xl font-bold text-center h-[70vh] mt-[15%] hidden"><span class="text-red-800 text-4xl md:text-7xl">Sorry!!</span><br>No news are avaialble for this catagory</section>
+        <section id="news-container" class="px-2 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2"></section>
+    </header>
+
+    
+
+    <!-- javascript link -->
+    <script src="./js/javascript.js"></script>
+</body>
+</html>
