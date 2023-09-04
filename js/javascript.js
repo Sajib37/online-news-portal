@@ -51,7 +51,7 @@ const createCard = (content) => {
     <div class="card bg-base-100 shadow-xl rounded-none">
         <figure class="relative">
             <img h-80 src="${content.image_url}" alt="Shoes" />
-            <div class="absolute bottom-0 right-0 bg-black text-white text-xs px-2 py-1">${content.total_view} views</div>
+            <div class="absolute bottom-0 right-0 bg-black text-white text-xs px-2 py-1 ${content.total_view?'':'hidden'}">${content.total_view} views</div>
         </figure>
         <div class="card-body p-2 overflow-hidden relative">
         <h1 class="font-bold">${content.title.slice(0,30)}</h1>
